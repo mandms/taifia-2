@@ -25,6 +25,13 @@ namespace lab2
             }
             int currentVertex = 0;
             RemoveUnreachableStates(visited, currentVertex);
+            for (int i = 0; i < visited.Count; i++)
+            {
+                if (!visited[i])
+                {
+                    _statesOutputsPairs.Remove(_states[i]);
+                }
+            }
             foreach (var item in visited)
             {
                 if (!item.Value)
